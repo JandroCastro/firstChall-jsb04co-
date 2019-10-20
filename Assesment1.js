@@ -22,6 +22,11 @@ function calculator() {
 calculator();
 
 //DADOS
+//En vez de que sea una cantidad fija doy como opción que se elija
+//el número hasta el que se quiere llegar.
+//no sé si se pedaa que fuera exactamente 50, si fuera así, lo 
+//hasría con if y en caso de pasar de 50 volvera a establecer
+//totalScore en 0 para que volviese a empezar
 
 function dieUntilGoal(goal) {
   let totalScore = 0;
@@ -41,6 +46,14 @@ function dieUntilGoal(goal) {
 dieUntilGoal(50);
 
 //PROFES
+//En este ejercicio, el resultado del método AssignAlums es confuso,
+//el for of me realiza lo que yo quiero pero 7 veces, controlando
+//con las DevTools no fui capaz de modificar este comportamiento
+//ni pararlo, provocado por la longitud del array students sin duda.
+//En la primera vuelta del for of me hace push a los dos alumnos que quiero,
+//pero después lo hace siete veces más.
+//He de decir, que para actualizar las StudentList de cada profesor hay que
+//llamar al método desde la instancia de cada uno de ellos (teachers[i].assignAlumns).
 
 let nameAlumn = [
   "Carla",
@@ -166,6 +179,3 @@ let students = Student.createAlumnList(
   subjectsAlumn,
   groupAlumn
 );
-console.log(students);
-console.log(teachers[1]);
-console.log(teachers);
