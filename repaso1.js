@@ -4,16 +4,25 @@ const sara = [89, 120, 103];
 const laura = [116, 94, 123];
 const maria = [97, 134, 105];
 
+
+/*Función para contar todos los puntos de todos los 
+partidos con el método reduce*/
+
 const totalMatchesScore = arr => {
   return arr.reduce((contador, puntos) => {
     return (contador = contador + puntos);
   }, 0);
 };
 
+/*Hacemos la media dividiendo el resultado de la función anterior
+entre la longitud del array de datos*/
+
 const makeMedia = arr => {
   let puntosTotales = totalMatchesScore(arr);
   return puntosTotales / arr.length;
 };
+/*Función que se llame automáticamente debajo que muestre los mensajes
+según instrucciones*/
 
 const mostrarMensaje = () => {
   if (makeMedia(sara) > makeMedia(laura)) {
@@ -36,6 +45,7 @@ mostrarMensaje();
 //EJERCICIO2
 
 const factura = [124, 58, 268];
+/*Hacemos push de los importes multiplicadolos por el porcentaje indicado*/
 
 const calculoPropinas = arr => {
   let propinas = [];
@@ -53,6 +63,9 @@ const calculoPropinas = arr => {
 };
 
 calculoPropinas(factura);
+/*Sumamos las cantidades del array de propinas resultante
+de la anterior función con el array de datos */
+
 
 const sumarPropinasAFactura = arr => {
   let costeTotal = [];
@@ -81,6 +94,11 @@ nums.map((value, index) => {
 for (const iterator of nums) {
   console.log(iterator);
 }
+/*Para ordenadr el Array, en cada vuelta de bucle generamos
+una variable temporal para mover el elemento que toca en esa
+vuelta de bucle a la izquierda si es menor que la que tenemos
+fijada con el primer bucle [i]*/
+
 
 const orderArray = arr => {
   const auxArr = [...arr];
@@ -95,7 +113,8 @@ const orderArray = arr => {
   }
   return auxArr;
 };
-
+/*Para ordenar de mayor a menor con sort, le decimos dentro
+que lo ordene de b ->a*/
 const superOrderArray = arr => {
   arr.sort((a, b) => {
     return b - a;
@@ -105,6 +124,11 @@ const superOrderArray = arr => {
 
 //////////////////////////////////////////////////////////////
 //EJERCICIO4
+
+/*guardamos dos prompt en dos variables, parse int para asegurarnos
+que sean números, si el resultado es mayor que cero lo sacamos por 
+la alerta, y si es menor, lo sacamos por la alerta después de 
+multiplicarlo por -1 */
 
 const modificarNumeros = () => {
   let num1 = parseInt(prompt("Introduce un número"));
